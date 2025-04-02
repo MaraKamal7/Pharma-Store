@@ -17,4 +17,7 @@ class Product extends Model
     }
 
 
+    public function patch() {
+        return $this->belongsTo(Patch::class);
+    }
 }
