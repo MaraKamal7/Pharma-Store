@@ -16,10 +16,12 @@ return new class extends Migration
             $table->string('name');
             $table->integer('least_number');
             $table->string('barcode');
-            $table->unsignedBigInteger('cat_id');
-            $table->foreign('cat_id')->references('id')->on('category');
-            $table->unsignedBigInteger('vendor_id');
-            $table->foreign('vendor_id')->references('id')->on('vendor');
+            // $table->unsignedBigInteger('category_id');
+            // $table->foreign('category_id')->references('id')->on('category');
+            // $table->unsignedBigInteger('vendor_id');
+            // $table->foreign('vendor_id')->references('id')->on('vendor');
+            $table->foreignId('category_id')->constrained('category');
+            $table->foreignId('vendor_id')->constrained('vendor');
             $table->timestamps();
         });
     }
