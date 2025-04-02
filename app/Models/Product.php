@@ -16,8 +16,7 @@ class Product extends Model
         return $this->belongsTo(Vendor::class);
     }
 
-
-    public function patch() {
-        return $this->belongsTo(Patch::class);
+    public function patchs() {
+        return $this->hasMany(Patch::class);
     }
 }
